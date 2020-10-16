@@ -44,11 +44,22 @@ function Layout({ children, home }) {
                 />
               </a>
             </Link>
-            <h2 className={utilStyles}></h2>
+            <h2 className={utilStyles.headingLg}>
+              <Link href="">
+                <a className={utilStyles.colorInherit}>{name}</a>
+              </Link>
+            </h2>
           </>
         )}
       </header>
-      {children}
+      <main>{children}</main>
+      {!home && (
+        <div className={styles.backToHome}>
+          <Link href="/">
+            <a>Back to home</a>
+          </Link>
+        </div>
+      )}
     </div>
   );
 }
